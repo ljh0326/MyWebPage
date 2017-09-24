@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+}
+
+div h1{
+    font-size : 50px;
+}
+
+body{
+    margin : 25vh 0;
+    display :flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color : beige;
+}
+input[type=text],
+input[type=email],
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+.cancelbtn,
+.signupbtn {
+    float: left;
+    width: 40%;
+    margin: 0 5%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+/* Add padding to container elements */
+
+.container {
+    padding: 16px;
+    position: relative;
+    right: 0px;
+    border: 3px solid burlywood;
+    padding: 10px;
+}
+
+/* Clear floats */
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
