@@ -55,8 +55,7 @@
 		%>
 		<li style="float: right"><a href="registerForm.jsp">SIGN UP</a></li>
 		<li style="float: right"><a href="loginForm.jsp">LOG IN</a></li>
-		<li style="float: right"><a href="http://blog.naver.com/ljh0326s"
-			target="_blank">RESERVETION</a></li>
+		<li style="float: right"><a href="board.jsp">RESERVETION</a></li>
 		<li style="float: right"><a href="http://blog.naver.com/ljh0326s"
 			target="_blank">BLOG</a></li>
 		<li style="float: right"><a href="https://github.com/ljh0326"
@@ -67,8 +66,7 @@
 		%>
 		<li style="float: right"><a href="myPage.jsp">MY PAGE</a></li>
 		<li style="float: right"><a href="/logoutAction.jsp">LOG OUT</a></li>
-		<li style="float: right"><a href="http://blog.naver.com/ljh0326s"
-			target="_blank">RESERVETION</a></li>
+		<li style="float: right"><a href="board.jsp">RESERVETION</a></li>
 		<li style="float: right"><a href="http://blog.naver.com/ljh0326s"
 			target="_blank">BLOG</a></li>
 

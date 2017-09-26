@@ -3,7 +3,7 @@ package myWeb;
 import java.util.List;
 import myWeb.*;
 
-//유저 객체에 접근하기위한 클래스
+//유저 객체에 접근하기위한 클래스 
 public class User {
 	private String e_mail;
 	private String password;

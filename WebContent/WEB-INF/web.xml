@@ -13,12 +13,33 @@
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 
+   <!-- DBCP리스너 설정  -->
+   
+   <!-- 설정한 리스너가 어디있는지 등록해 준다. -->
 	<listener>
 		<listener-class>myWeb.DBCPInitListener</listener-class>
 	</listener>
 
+	<!-- 속성의 이름과 값을 설정해 준다. -->
 	<context-param>
 		<param-name>jdbcdriver</param-name>
 		<param-value>oracle.jdbc.driver.OracleDriver</param-value>
 	</context-param>
+
+	<!-- 로그인 필터 xml  -->
+	
+	<!-- 필터 이름과 해당  클래스가 어디있는지 선언해 준다.  -->
+	<filter>
+		<filter-name>LoginCheck</filter-name>
+		<filter-class>myWeb.LoginCheckFilter</filter-class>
+	</filter>
+	
+	<!-- 선언된 필터를 어떤 범위에 설정해줄지 정해준다.  -->
+	<filter-mapping>
+		<filter-name>LoginCheck</filter-name>
+		<url-pattern>/board.jsp</url-pattern>
+	</filter-mapping>
+	
 </web-app>
+
+	

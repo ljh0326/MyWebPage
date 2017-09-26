@@ -9,6 +9,11 @@
 </head>
 <body>
 
+<!-- 타겟을 받아 온다. -->
+<% 
+String target = request.getParameter("target");
+%>
+
 <!-- 쿠키 -->
 	<%
 	    //아이디 변수를 생성
@@ -42,10 +47,11 @@
 				placeholder="Enter Username" name="uname" value="<%=id%>" required>
 			</label> <label for=""><b> Password </b> <input type="password"
 				placeholder="Enter Passward" name="psw" required> </label> 
-				<!-- <input type="text" name="target" value="<//%=target%>"> -->
 			<button type="submit">Login</button>
+			<input type="text"
+				style="display:none;" name="target" value="<%= target %>">
 			<input type="checkbox" <%=!id.equals("") ? "checked" : ""%>
-				name="remember"> Remember me
+				name="remember"> Remember me	
 		</div>
 		<div class="container" style="background-color: #f1f1f1">
 			<button class="cancelbtn">Cancel</button>

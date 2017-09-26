@@ -37,7 +37,7 @@ public class LoginAction extends HttpServlet {
 		
 		String tg = request.getParameter("target");
 		String save = request.getParameter("remember");
-
+		
 		
 		//어떤 타입으로 출력할지 명시 후 출력객체생성
 		response.setContentType("text/html; charset=UTF-8");
@@ -46,31 +46,34 @@ public class LoginAction extends HttpServlet {
 		//세션을 생성해준다.
 		HttpSession session = request.getSession();
 		
-		//dao클래스에서 id와 비밀번호를 보내 로직을 처리한다. 
+		//dao클래스에  user객체를 보내 데이터베이스에서 결과를 받아온다. 
 		int result = dao.login(user);
 		
-		//1. 아이디비밀번호 같으면 로그인성공
+		//1 아이디비밀번호 같으면 로그인성공
 		if (result == 1) {
 			
-			//세션 속성을 부여해준다.
+			//1.2 로그인에 성공했으면 세션에 id 속성을 부여해준다.
 			session.setAttribute("id", user.getE_mail());	
-			//체크 포인트가 되어있으면 쿠키를 만들어 준다.
+			
+			//1.3.1 체크 포인트가 되어있으면 쿠키를 만들어 준다.
 			if (save != null) {
 				Cookie cookie = new Cookie("rememberID", user.getE_mail());
 				cookie.setMaxAge(60 * 30);
 				response.addCookie(cookie);
-			//없으면 쿠키 제거
+			//1.3.2 없으면 쿠키 제거
 			} else {
 				Cookie cookie = new Cookie("rememberID", "");
 				cookie.setMaxAge(0);
 				response.addCookie(cookie);
 			}			
-			//tg값이 널이면 메인으로 널이아니면 설정해준 tg값으로 이동한다. 현재 사용안하는 기능
-			if (tg != null)
+			//1.4.1 tg값이 널이아니면 해당 target값으로 요청을 보낸다.
+			if (!tg.equals("null"))
 				response.sendRedirect(tg);
+			//1.4.2 tg값이 null이면 메인으로 보내준다.
 			else
 				response.sendRedirect("index.jsp");
 		} 
+		
 		//2. 비밀번호 다르면 로그인 안됨
 		else if (result == 0) {
 			out.println("<script>");
@@ -78,6 +81,7 @@ public class LoginAction extends HttpServlet {
 			out.println("history.back()");
 			out.println("</script>");
 		} 
+		
 		//3. 아이디가 없어도 로그인 안된다.
 		else if (result == -1) {
 			out.println("<script>");
@@ -85,6 +89,7 @@ public class LoginAction extends HttpServlet {
 			out.println("history.back()");
 			out.println("</script>");
 		}
+		
 		//4. 데이터 베이스 오류 
 		else if (result == -2){
 			out.println("<script>");
