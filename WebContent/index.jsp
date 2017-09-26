@@ -18,7 +18,6 @@
 	<%@ include file="nav.jsp"%>
 
 	<!-- 헤더 -->
-	<div class="container">
 		<header>
 		<div class="mainImage">
 			<h1>
@@ -26,13 +25,11 @@
 			</h1>
 		</div>
 		</header>
-	</div>
 
 	<!-- 메인 -->
 	<div class="container" id="coffe">
 		<h1 id="coffeTitle">
-			Delicious Journey with <span>Coffe
-			e</span>
+			Delicious Journey with <span>Coffee</span>
 		</h1>
 		<section class="columns"> <figure> <img
 			src="http://findself.ru/wp-content/uploads/2016/08/non-coffee2.jpg">

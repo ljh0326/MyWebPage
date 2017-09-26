@@ -65,7 +65,7 @@
 			//3. 세션에 저장되어있는 아이디가 있으면 LOG OUT해야한다.
 			} else {
 		%>
-		<li style="float: right"><a href="registerForm.jsp">MY PAGE</a></li>
+		<li style="float: right"><a href="myPage.jsp">MY PAGE</a></li>
 		<li style="float: right"><a href="/logoutAction.jsp">LOG OUT</a></li>
 		<li style="float: right"><a href="http://blog.naver.com/ljh0326s"
 			target="_blank">RESERVETION</a></li>

@@ -17,7 +17,7 @@
     <form action="/RegistAction" style="border : 1px solid #ccc" method = "post">
         <div class="container">
             <label><b>Email</b>
-                <input type="text" placeholder="Enter Email" name="email" required>
+                <input type="email" placeholder="Enter Email 1234@1234" name="email" required>
             </label>
             <label><b>User Name</b>
                 <input type="text" placeholder="Enter UserName" name="uname" required>

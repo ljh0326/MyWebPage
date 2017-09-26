@@ -18,8 +18,8 @@ import javax.servlet.http.HttpSession;
 public class LoginAction extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
-	private UserDAO dao = new UserDAO();
-	
+	private UserDao dao = UserDao.getInstance();
+	User user = new User();
 	
 	@Override
 	//get으로 req와 resp를 다시 보낸다.
@@ -30,31 +30,33 @@ public class LoginAction extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
+		
 		//브라우저에서 보내준 요청을 바탕으로 id, pwd, tg, 체크 유무를 파악한다.
-		String id = request.getParameter("uname");
-		String pwd = request.getParameter("psw");
+		user.setE_mail(request.getParameter("uname"));
+		user.setPassword(request.getParameter("psw"));
+		
 		String tg = request.getParameter("target");
 		String save = request.getParameter("remember");
 
 		
 		//어떤 타입으로 출력할지 명시 후 출력객체생성
-		response.setContentType("text/html;charset=UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		
 		//세션을 생성해준다.
 		HttpSession session = request.getSession();
 		
 		//dao클래스에서 id와 비밀번호를 보내 로직을 처리한다. 
-		int result = dao.login(id, pwd);
+		int result = dao.login(user);
 		
 		//1. 아이디비밀번호 같으면 로그인성공
 		if (result == 1) {
 			
 			//세션 속성을 부여해준다.
-			session.setAttribute("id", id);			
+			session.setAttribute("id", user.getE_mail());	
 			//체크 포인트가 되어있으면 쿠키를 만들어 준다.
 			if (save != null) {
-				Cookie cookie = new Cookie("rememberID", id);
+				Cookie cookie = new Cookie("rememberID", user.getE_mail());
 				cookie.setMaxAge(60 * 30);
 				response.addCookie(cookie);
 			//없으면 쿠키 제거

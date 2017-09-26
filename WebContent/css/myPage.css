@@ -1,0 +1,38 @@
+* {
+    box-sizing : border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: auto;
+    
+}
+
+
+/* table style */
+
+table {
+    border-collapse: collapse;
+    height: 50vh;
+    border-top : 2px solid #545454;
+    border-bottom: 1px solid #4f4e4e;
+}
+
+th {
+    height: 7vh
+}
+th, td {
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}

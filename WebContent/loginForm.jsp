@@ -31,7 +31,7 @@
 		//String target = request.getParameter("target");
 	%>
 
-	<form action="/LoginAction" method="get">
+	<form action="/LoginAction" method="post">
 		<div class="imgcontainer">
 			<img
 				src="http://schoolmus.com/gnu/data/cheditor4/1401/e583193771e97cdc880e768b0661ef44_Fzexwc958Q4t.png"
