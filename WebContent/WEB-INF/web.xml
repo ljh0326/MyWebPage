@@ -19,13 +19,15 @@
 	<listener>
 		<listener-class>myWeb.DBCPInitListener</listener-class>
 	</listener>
-
+	
+	
 	<!-- 속성의 이름과 값을 설정해 준다. -->
 	<context-param>
 		<param-name>jdbcdriver</param-name>
 		<param-value>oracle.jdbc.driver.OracleDriver</param-value>
 	</context-param>
-
+	
+	
 	<!-- 로그인 필터 xml  -->
 	
 	<!-- 필터 이름과 해당  클래스가 어디있는지 선언해 준다.  -->
