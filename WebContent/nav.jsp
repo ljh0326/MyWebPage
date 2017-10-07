@@ -34,7 +34,7 @@
 <body>
 	<nav id="nav" class="clearfix">
 	<ul class="clearfix">
-		<li><a href="#" target="_blank"><i class="fa fa-home"
+		<li><a href="index.jsp"><i class="fa fa-home"
 				style="font-size: 22px"></i></a></li>
 
 		<li class="dropdown"><a href="javascript:void(0)" class="dropbtn">MENU</a>

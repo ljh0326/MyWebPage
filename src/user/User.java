@@ -1,7 +1,8 @@
-package myWeb;
+package user;
 
 import java.util.List;
-import myWeb.*;
+
+import user.*;
 
 //유저 객체에 접근하기위한 클래스 
 public class User {

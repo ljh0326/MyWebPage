@@ -17,7 +17,7 @@
    
    <!-- 설정한 리스너가 어디있는지 등록해 준다. -->
 	<listener>
-		<listener-class>myWeb.DBCPInitListener</listener-class>
+		<listener-class>user.DBCPInitListener</listener-class>
 	</listener>
 	
 	
@@ -33,7 +33,7 @@
 	<!-- 필터 이름과 해당  클래스가 어디있는지 선언해 준다.  -->
 	<filter>
 		<filter-name>LoginCheck</filter-name>
-		<filter-class>myWeb.LoginCheckFilter</filter-class>
+		<filter-class>user.LoginCheckFilter</filter-class>
 	</filter>
 	
 	<!-- 선언된 필터를 어떤 범위에 설정해줄지 정해준다.  -->

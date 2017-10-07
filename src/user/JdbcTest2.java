@@ -1,4 +1,4 @@
-package myWeb;
+package user;
 /*
  * 오류 체크용  에러가 있을때는 작게작게 짤라서 알아보자 
  */

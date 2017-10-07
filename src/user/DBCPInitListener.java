@@ -1,4 +1,4 @@
-package myWeb;
+package user;
 
 
 import javax.servlet.ServletContext;

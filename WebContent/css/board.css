@@ -1,0 +1,56 @@
+* {
+    box-sizing : border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    
+    
+}
+
+h2{
+    text-align: center;
+    font-size: 50px;
+}
+
+/* table style */
+table {
+    border-collapse: collapse;
+    height: auto;
+    width: 100%;
+    border-top : 3px solid #545454;
+    border-bottom: 3px solid #4f4e4e;
+    margin: 10px;
+}
+td {
+    border-top : 1px solid #545454;
+    border-bottom: 1px solid #4f4e4e;
+}
+th {
+    height: 7vh
+}
+th, td {
+    text-align: center;
+    padding: 8px;
+}
+
+/* button */
+
+button{
+    width: 100px;
+    height: 50px;
+    margin-left: 80%;
+}
+
+button a {
+    color: goldenrod;
+    text-decoration: none;
+}
+
+button a:visited{
+    text-decoration: none;
+}

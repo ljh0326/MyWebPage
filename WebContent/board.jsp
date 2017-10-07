@@ -1,57 +1,47 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="myWeb.*"%>
+<%@ page import="user.*"%>
+<%@ page import="board.*"%>
+<%@ page import="java.util.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="../css/myPage.css">
+<link rel="stylesheet" href="../css/board.css">
 <title>Insert title here</title>
 </head>
 <body>
-
 	<%
-		String id = (String) session.getAttribute("id");
-
-		UserDao dao = UserDao.getInstance();
-		User user = new User();
-
-		user = dao.getUserInfo(id);
+		Bbs bbs = new Bbs();
+		BbsDao dao = BbsDao.getInstance();
+		List<Bbs> list = dao.selectAllBbs();
 	%>
-	<h2>내 정보</h2>
+	<!-- 네브바 -->
+	<%@ include file="nav.jsp" %>
+	<h2>예약 게시판</h2>
 
-	<form action="/UpdateAction">
-		<table>
-			<tr>
-				<td>E_mial</td>
-				<td><%=user.getE_mail()%></td>
-			</tr>
-			<tr>
-				<td>NAME</td>
-				<td><input type="text" name="name" id=""
-					value="<%=user.getName()%>"></td>
-			</tr>
-			<tr>
-				<td>PASSWORD</td>
-				<td><input type="password" name="psw" id=""
-					value="<%=user.getPassword()%>"></td>
-			</tr>
-			<tr>
-				<td>가입일</td>
-				<td><%=user.getIn_date()%></td>
-			</tr>
-			<tr>
-				<td>전화 번호</td>
-				<td><input type="text" name="pnum" id=""
-					value="<%=user.getPhonnum()%>"></td>
-			</tr>
-			<tr>
-				<td>포인트</td>
-				<td><%=user.getPoint()%></td>
-			</tr>
-		</table>
-		<input type="submit" value="수정하기">
-	</form>
-
+	<table>
+		<tr>
+			<th>작성자</th>
+			<th>제목</th>
+			<th>작성일</th>
+			<th>조회수</th>
+		</tr>
+		<%
+			for (int i = 0; i < list.size(); i++) {
+		%>
+		<tr>
+			<td><%=list.get(i).getUserId()%></td>
+			<td><%=list.get(i).getTitle()%></td>
+			<td><%=list.get(i).getDate()%></td>
+			<td><%=list.get(i).getCount()%></td>
+		</tr>
+		<%
+			}
+		%>
+	</table>
+	<button>
+		<a href="./write.jsp">글 작성하기</a>
+	</button>
 </body>
 </html>
