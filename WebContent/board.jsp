@@ -1,3 +1,7 @@
+<!-- 
+	글목록을 보여주는 JSP
+-->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="user.*"%>
@@ -11,6 +15,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<%
 		Bbs bbs = new Bbs();
 		BbsDao dao = BbsDao.getInstance();
@@ -32,7 +37,7 @@
 		%>
 		<tr>
 			<td><%=list.get(i).getUserId()%></td>
-			<td><%=list.get(i).getTitle()%></td>
+			<td><a href="./boardContent.jsp?id=<%=list.get(i).getId() %>"><%=list.get(i).getTitle() %></a></td>
 			<td><%=list.get(i).getDate()%></td>
 			<td><%=list.get(i).getCount()%></td>
 		</tr>
@@ -41,7 +46,7 @@
 		%>
 	</table>
 	<button>
-		<a href="./write.jsp">글 작성하기</a>
+		<a href="./write.jsp">글 작성</a>
 	</button>
 </body>
 </html>
